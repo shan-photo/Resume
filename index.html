@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吳佩珊 — 履歷 CV</title>
+<meta name="description" content="吳佩珊，文化工作者、紀實攝影師。專案執行、採訪書寫與策展。">
+<meta property="og:title" content="吳佩珊 — 履歷 CV">
+<meta property="og:description" content="文化工作者，西拉雅族。紀實攝影、採訪書寫與策展。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1A1714;
+  --ink-soft: #3D3630;
+  --ink-muted: #6B5F53;
+  --ink-faint: #9A8E82;
+  --accent: #6B4C3B;
+  --accent-light: #8B6B56;
+  --rule: #D4C9BB;
+  --rule-light: #E8E0D6;
+  --bg: #FAF7F3;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans TC', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+a:hover { opacity: 0.7; }
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ── HERO ── */
+.hero { padding: 64px 0 48px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.portrait-wrap { position: relative; }
+
+.portrait-wrap::before {
+  content: '';
+  position: absolute;
+  top: 8px; left: 8px;
+  width: 100%; height: 100%;
+  border: 1.5px solid var(--accent);
+  opacity: 0.3;
+}
+
+.portrait {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text { padding-top: 4px; }
+
+.name-zh {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.name-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+.hero-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  margin: 20px 0;
+}
+
+/* ── CONTACT ── */
+.contact {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.contact a {
+  font-size: 13px;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.02em;
+}
+
+.contact a:hover { color: var(--accent); }
+
+.contact svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ── BIO ── */
+.bio {
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--ink-soft);
+  font-weight: 400;
+  max-width: 560px;
+}
+
+.bio strong { font-weight: 600; color: var(--ink); }
+
+.bio a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+}
+
+.bio a:hover { border-bottom-color: var(--accent); }
+
+/* ── SKILLS ── */
+.skills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.skill-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  background: rgba(107, 76, 59, 0.07);
+  border: 1px solid rgba(107, 76, 59, 0.15);
+  padding: 4px 12px;
+  letter-spacing: 0.06em;
+}
+
+/* ── SECTION ── */
+.section { padding: 40px 0; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ── TWO-COL ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.info-block-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+
+.edu-item, .exp-item { margin-bottom: 14px; }
+
+.edu-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.edu-dept { font-size: 13px; color: var(--ink-muted); font-weight: 300; }
+
+.exp-row { display: flex; gap: 12px; align-items: baseline; }
+
+.exp-year {
+  font-size: 12px;
+  color: var(--ink-faint);
+  min-width: 68px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.exp-org { font-size: 14px; font-weight: 500; color: var(--ink); }
+.exp-role { font-size: 13px; color: var(--ink-muted); font-weight: 300; padding-left: 80px; }
+
+/* ── TABS ── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink-faint);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.06em;
+  margin-bottom: -1px;
+}
+
+.tab:hover { color: var(--ink-muted); }
+
+.tab.active {
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── PROJECTS ── */
+.project-list { list-style: none; }
+
+.project-item {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-light);
+  opacity: 0;
+  transform: translateY(6px);
+  animation: fadeUp 0.35s ease forwards;
+}
+
+.project-year {
+  font-size: 12px;
+  color: var(--ink-faint);
+  min-width: 60px;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.project-title {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.project-title a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.5px;
+}
+
+.project-title a:hover { border-bottom-color: var(--accent); }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 56px;
+  padding: 24px 0 48px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+}
+
+.footer-links { display: flex; gap: 16px; }
+.footer-links a { color: var(--ink-faint); font-size: 12px; }
+.footer-links a:hover { color: var(--accent); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  .hero-grid { grid-template-columns: 140px 1fr; gap: 24px; }
+  .portrait { width: 140px; height: 175px; }
+  .name-zh { font-size: 32px; }
+  .two-col { grid-template-columns: 1fr; gap: 32px; }
+  .tab { padding: 8px 10px; font-size: 12px; }
+  .container { padding: 0 20px; }
+  .hero { padding: 40px 0 32px; }
+}
+
+@media (max-width: 420px) {
+  .hero-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .portrait-wrap { margin-bottom: 8px; }
+  .hero-divider { margin: 16px auto; }
+  .bio { text-align: left; }
+  .contact { justify-content: center; }
+  .skills { justify-content: center; }
+}
+
+@media print {
+  body::before { display: none; }
+  .tabs { display: none; }
+  .tab-content { display: block !important; }
+  .project-item { opacity: 1; transform: none; animation: none; }
+  .section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="portrait-wrap">
+        <img src="profile.jpg" alt="吳佩珊" class="portrait">
+      </div>
+      <div class="hero-text">
+        <h1 class="name-zh">吳佩珊</h1>
+        <div class="name-en">Pei-Shan Wu</div>
+        <div class="hero-divider"></div>
+
+        <!-- Contact -->
+        <div class="contact">
+          <a href="mailto:polly11603@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            polly11603@gmail.com
+          </a>
+          <a href="https://www.instagram.com/3_s_photo/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            @3_s_photo
+          </a>
+        </div>
+
+        <p class="bio">
+          <strong>文化工作者</strong>，西拉雅族。以專案執行、紀實攝影、採訪書寫與策展為核心，長期以文字與影像記錄南臺灣常民生活與文化現場。2025–2026 年完成跨國紀實攝影計畫<a href="https://shan-photo.github.io/unframed-youth" target="_blank"><strong>《青春框景｜Unframed Youth》</strong></a>，赴日本東京、北海道進行田野調查，探討青年身份認同與空間的關係。
+        </p>
+
+        <!-- Skills -->
+        <div class="skills">
+          <span class="skill-tag">紀實攝影</span>
+          <span class="skill-tag">專案管理</span>
+          <span class="skill-tag">採訪撰稿</span>
+          <span class="skill-tag">執行編輯</span>
+          <span class="skill-tag">活動企劃</span>
+          <span class="skill-tag">社群經營</span>
+          <span class="skill-tag">空間設計</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- EDUCATION & EXPERIENCE -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">學經歷</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="info-block-title">學歷</div>
+        <div class="edu-item">
+          <div class="edu-name">國立中興大學</div>
+          <div class="edu-dept">景觀與遊憩學士學位學程　學士</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-name">國立臺南女子高級中學</div>
+          <div class="edu-dept">普通科　人文社會科學班</div>
+        </div>
+      </div>
+      <div>
+        <div class="info-block-title">工作經歷</div>
+        <div class="exp-item">
+          <div class="exp-row">
+            <span class="exp-year">2024–2025</span>
+            <span class="exp-org">城市浪人育成協會</span>
+          </div>
+          <div class="exp-role">品牌行銷公關</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-row">
+            <span class="exp-year">2020–2024</span>
+            <span class="exp-org">透南風文化創意有限公司</span>
+          </div>
+          <div class="exp-role">專案執行</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-row">
+            <span class="exp-year">2019</span>
+            <span class="exp-org">大成理想市集</span>
+          </div>
+          <div class="exp-role">市集行政（工讀）</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-row">
+            <span class="exp-year">2017</span>
+            <span class="exp-org">行政院農業委員會</span>
+          </div>
+          <div class="exp-role">農村再生訪談紀錄（工讀）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">參與專案</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" onclick="showTab('curation')" role="tab">策展</button>
+      <button class="tab" onclick="showTab('events')" role="tab">活動企劃執行</button>
+      <button class="tab" onclick="showTab('publish')" role="tab">採訪出版</button>
+      <button class="tab" onclick="showTab('film')" role="tab">影像紀錄</button>
+      <button class="tab" onclick="showTab('design')" role="tab">設計編排</button>
+      <button class="tab" onclick="showTab('intl')" role="tab">國際交流</button>
+      <button class="tab" onclick="showTab('social')" role="tab">社群經營</button>
+    </div>
+
+    <!-- 策展 -->
+    <ul class="project-list tab-content" id="tab-curation">
+      <li class="project-item" style="animation-delay:.00s"><span class="project-year">2026</span><span class="project-title"><a href="https://shan-photo.github.io/unframed-youth" target="_blank">《青春框景｜Unframed Youth》</a>跨國紀實攝影暨巡迴展覽</span></li>
+      <li class="project-item" style="animation-delay:.03s"><span class="project-year">2025</span><span class="project-title">臺師大暖日永續節｜城市浪人展位 ／ 展示設計</span></li>
+      <li class="project-item" style="animation-delay:.06s"><span class="project-year">2025</span><span class="project-title">浪人祭6.5、野人祭｜城市浪人展位 ／ 展示設計</span></li>
+      <li class="project-item" style="animation-delay:.09s"><span class="project-year">2024</span><span class="project-title">雜學校 國際教育創新博覽會｜城市浪人展位 ／ 展示規劃、文字</span></li>
+      <li class="project-item" style="animation-delay:.12s"><span class="project-year">2021</span><span class="project-title">成功大學博物館府城與成大展示更新 ／ 行政統籌、平面美編</span></li>
+    </ul>
+
+    <!-- 活動企劃執行 -->
+    <ul class="project-list tab-content" id="tab-events" style="display:none">
+      <li class="project-item" style="animation-delay:.00s"><span class="project-year">2025</span><span class="project-title">流浪挑戰賽｜城市浪人 ／ 宣傳、影像</span></li>
+      <li class="project-item" style="animation-delay:.03s"><span class="project-year">2024</span><span class="project-title">臺南400流行音樂文化展演規劃執行勞務委託案 ／ 專案管理</span></li>
+      <li class="project-item" style="animation-delay:.06s"><span class="project-year">2022–24</span><span class="project-title">謝銘祐與麵包車樂團「恁的演唱會」／ 庶務行政</span></li>
+      <li class="project-item" style="animation-delay:.09s"><span class="project-year">2023</span><span class="project-title">臺南市文化局文資處「孔廟文化節」／ 活動執行</span></li>
+      <li class="project-item" style="animation-delay:.12s"><span class="project-year">2023</span><span class="project-title">西拉雅族考古成果及水文化遺產推廣計畫 ／ 企劃執行統籌</span></li>
+      <li class="project-item" style="animation-delay:.15s"><span class="project-year">2023</span><span class="project-title">透南風咖啡聚場｜7TH BIRTHDAY PARTY ／ 企劃執行統籌</span></li>
+      <li class="project-item" style="animation-delay:.18s"><span class="project-year">2023</span><span class="project-title">臺南市文化局｜散步柚樂園✦柚花藝術節 ／ 市集、展演企劃</span></li>
+      <li class="project-item" style="animation-delay:.21s"><span class="project-year">2022</span><span class="project-title">寫歌冰果室 哼一首___的歌 ／ 企劃執行統籌</span></li>
+      <li class="project-item" style="animation-delay:.24s"><span class="project-year">2022</span><span class="project-title">臺南新藝獎教育推廣「新藝城市探索秘密」／ 企劃執行</span></li>
+      <li class="project-item" style="animation-delay:.27s"><span class="project-year">2022</span><span class="project-title">嘉義市立博物館與嘉大附小「Muse遊樂園」／ 企劃執行</span></li>
+      <li class="project-item" style="animation-delay:.30s"><span class="project-year">2021</span><span class="project-title">漫遊七股尋寶漁村計畫－龍山社區故事行銷 ／ 企劃執行統籌</span></li>
+      <li class="project-item" style="animation-delay:.33s"><span class="project-year">2020</span><span class="project-title">今暝來作夢－復興夜間食堂行銷活動 ／ 企劃執行統籌</span></li>
+    </ul>
+
+    <!-- 採訪出版 -->
+    <ul class="project-list tab-content" id="tab-publish" style="display:none">
+      <li class="project-item" style="animation-delay:.00s"><span class="project-year">2025</span><span class="project-title">城市浪人 2024 年度成果手冊 ／ 企劃編輯、撰稿</span></li>
+      <li class="project-item" style="animation-delay:.03s"><span class="project-year">2024</span><span class="project-title">《2023 再。嘉義鄉村藝術行動》專書 ／ 執行編輯、採訪撰稿</span></li>
+      <li class="project-item" style="animation-delay:.06s"><span class="project-year">2023</span><span class="project-title">隆田文資教育園區《嘉南大圳工事圖》聯名筆記本 ／ 執行編輯</span></li>
+      <li class="project-item" style="animation-delay:.09s"><span class="project-year">2023</span><span class="project-title">《2022 再。嘉義鄉村藝術行動》專書 ／ 執行編輯、採訪撰稿</span></li>
+      <li class="project-item" style="animation-delay:.12s"><span class="project-year">2023</span><span class="project-title">孔廟與日本首里城御匾修復交流計畫 中日文御匾摺頁 ／ 撰稿</span></li>
+      <li class="project-item" style="animation-delay:.15s"><span class="project-year">2020–23</span><span class="project-title">嘉義市立博物館季刊《桃城晃遊》vol. 9、vol. 13、vol. 14、vol. 15、vol. 16 ／ 採訪撰稿</span></li>
+    </ul>
+
+    <!-- 影像紀錄 -->
+    <ul class="project-list tab-content" id="tab-film" style="display:none">
+      <li class="project-item" style="animation-delay:.00s"><span class="project-year">2025</span><span class="project-title">流浪挑戰賽 ／ 導演、製片</span></li>
+      <li class="project-item" style="animation-delay:.03s"><span class="project-year">2024</span><span class="project-title">謝銘祐〈海岸〉音樂錄影帶 ／ 製片</span></li>
+      <li class="project-item" style="animation-delay:.06s"><span class="project-year">2022</span><span class="project-title">UNIQLO 臺南區域行銷影片 ／ 製片</span></li>
+    </ul>
+
+    <!-- 設計編排 -->
+    <ul class="project-list tab-content" id="tab-design" style="display:none">
+      <li class="project-item" style="animation-delay:.00s"><span class="project-year">2021</span><span class="project-title">【扛茨走溪流】竹籠茨 3D 建模</span></li>
+      <li class="project-item" style="animation-delay:.03s"><span class="project-year">2021</span><span class="project-title">【到時間裡走走 Walk in Time】文資推廣活動 ／ 視覺設計</span></li>
+      <li class="project-item" style="animation-delay:.06s"><span class="project-year">2020</span><span class="project-title">友愛街區的技藝記憶轉運站 ／ 視覺、摺頁設計</span></li>
+      <li class="project-item" style="animation-delay:.09s"><span class="project-year">2020</span><span class="project-title">溪墘與濱海的時光旅程 ／ 社區摺頁規劃</span></li>
+    </ul>
+
+    <!-- 國際交流 -->
+    <ul class="project-list tab-content" id="tab-intl" style="display:none">
+      <li class="project-item" style="animation-delay:.00s"><span class="project-year">2025</span><span class="project-title">日本 willdoor × 城市浪人 迷你挑戰賽 ／ 庶務行政、隨隊攝影</span></li>
+      <li class="project-item" style="animation-delay:.03s"><span class="project-year">2024</span><span class="project-title">恁的演唱會 海外公演 @ 日本沖繩宜野座 ／ 隨隊攝影</span></li>
+      <li class="project-item" style="animation-delay:.06s"><span class="project-year">2024</span><span class="project-title">時苑 攝影 @ 金門 ／ 攝影、文字書寫</span></li>
+      <li class="project-item" style="animation-delay:.09s"><span class="project-year">2023</span><span class="project-title">恁的演唱會 海外公演 @ 日本新潟三箇 ／ 庶務行政</span></li>
+    </ul>
+
+    <!-- 社群經營 -->
+    <ul class="project-list tab-content" id="tab-social" style="display:none">
+      <li class="project-item" style="animation-delay:.00s"><span class="project-year">2025</span><span class="project-title">城市浪人 ／ 粉專管理員</span></li>
+      <li class="project-item" style="animation-delay:.03s"><span class="project-year">2023–24</span><span class="project-title">復返西拉雅 ／ 粉專管理員</span></li>
+      <li class="project-item" style="animation-delay:.06s"><span class="project-year">2021–22</span><span class="project-title">台南市七股區龍山社區 ／ 粉專管理員</span></li>
+      <li class="project-item" style="animation-delay:.09s"><span class="project-year">2021</span><span class="project-title">藝遊臺南「刈香傳藝。陣有藝思」／ 粉專編輯</span></li>
+      <li class="project-item" style="animation-delay:.12s"><span class="project-year">2021</span><span class="project-title">《匯流。敆流》透南風雜誌第七期嘖嘖集資 ／ 企劃統籌</span></li>
+      <li class="project-item" style="animation-delay:.15s"><span class="project-year">2020–24</span><span class="project-title">透南風工作室、透南風咖啡聚場 ／ 粉專管理員</span></li>
+      <li class="project-item" style="animation-delay:.18s"><span class="project-year">2020</span><span class="project-title">菁寮義昌碾米廠 ／ 粉專管理員</span></li>
+      <li class="project-item" style="animation-delay:.21s"><span class="project-year">2019</span><span class="project-title">道禾共好市集 ／ 粉專編輯</span></li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>吳佩珊 — 履歷</span>
+    <div class="footer-links">
+      <a href="mailto:polly11603@gmail.com">Email</a>
+      <a href="https://www.instagram.com/3_s_photo/" target="_blank">Instagram</a>
+    </div>
+    <span>2026</span>
+  </footer>
+
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.style.display = 'none'; });
+  document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
+
+  var panel = document.getElementById('tab-' + id);
+  panel.style.display = '';
+
+  panel.querySelectorAll('.project-item').forEach(function(item) {
+    item.style.animation = 'none';
+    item.offsetHeight;
+    item.style.animation = '';
+  });
+
+  var tabs = document.querySelectorAll('.tab');
+  var names = ['curation','events','publish','film','design','intl','social'];
+  var idx = names.indexOf(id);
+  if (idx >= 0 && tabs[idx]) tabs[idx].classList.add('active');
+}
+</script>
+
+</body>
+</html>
