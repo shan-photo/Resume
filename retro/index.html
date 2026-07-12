@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吳佩珊 Pei-Shan Wu // 個人首頁 ★ since 1996</title>
+<meta name="description" content="吳佩珊（Pei-Shan Wu）文化工作者、紀實攝影、策展 — 復古版履歷">
+<meta property="og:title" content="吳佩珊 Pei-Shan Wu // 個人首頁">
+<meta property="og:description" content="文化工作者、紀實攝影、策展 — 90s 復古版履歷">
+<meta property="og:type" content="website">
+<style>
+/* ============================================================
+   90s RETRO / WIN95 設計權杖
+   ============================================================ */
+:root{
+  --bg:#C0C0C0; --fg:#000; --muted:#808080;
+  --silver:#C0C0C0; --silver-lt:#dfdfdf; --silver-dk:#808080; --silver-xdk:#404040;
+  --white:#fff; --black:#000;
+  --navy:#000080; --navy2:#1084D0;
+  --blue:#0000FF; --red:#FF0000; --yellow:#FFFF00; --green:#00AA00; --lime:#00FF00;
+  --panel-yellow:#FFFFCC; --visited:#800080;
+  --row-alt:#E8E8E8;
+  --font-sans:"MS Sans Serif","Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  --font-head:"Arial Black",Impact,Haettenschweiler,sans-serif;
+  --font-mono:"Courier New",Courier,monospace;
+}
+
+*{box-sizing:border-box; border-radius:0 !important;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; color:var(--fg); font-family:var(--font-sans); font-size:15px; line-height:1.55;
+  background-color:var(--silver);
+  background-image:
+    linear-gradient(45deg,#b8b8b8 25%,transparent 25%),
+    linear-gradient(-45deg,#b8b8b8 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,#b8b8b8 75%),
+    linear-gradient(-45deg,transparent 75%,#b8b8b8 75%);
+  background-size:4px 4px;
+  background-position:0 0,0 2px,2px -2px,-2px 0;
+}
+::selection{background:var(--navy); color:#fff;}
+img{max-width:100%; display:block;}
+
+/* ── 斜面工具 class ── */
+.bevel-out{border:2px solid; border-color:var(--white) var(--silver-dk) var(--silver-dk) var(--white); box-shadow:inset -1px -1px 0 var(--silver-xdk), inset 1px 1px 0 var(--silver-lt);}
+.bevel-in {border:2px solid; border-color:var(--silver-dk) var(--white) var(--white) var(--silver-dk); box-shadow:inset 1px 1px 0 var(--silver-xdk), inset -1px -1px 0 var(--silver-lt);}
+
+/* ── 連結 ── */
+a{color:var(--blue); text-decoration:underline; cursor:pointer;}
+a:visited{color:var(--visited);}
+a:hover{color:var(--red);}
+a:active{color:var(--red);}
+a:focus-visible{outline:2px dotted #000; outline-offset:2px;}
+
+/* ── 容器 ── */
+.wrap{max-width:880px; margin:0 auto; padding:10px 8px 40px;}
+
+/* ── 跑馬燈 ── */
+.marquee{background:var(--black); color:var(--lime); border:2px solid; border-color:var(--silver-dk) var(--white) var(--white) var(--silver-dk); overflow:hidden; white-space:nowrap; padding:4px 0; font-family:var(--font-mono); font-size:13px;}
+.marquee-track{display:inline-flex; padding-left:0; animation:marq 26s linear infinite; will-change:transform;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee-track span{padding:0 26px;}
+.marquee .c-y{color:var(--yellow);} .marquee .c-r{color:var(--red);} .marquee .c-c{color:#00FFFF;} .marquee .c-m{color:#FF00FF;}
+@keyframes marq{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+/* ── 視窗（Win95）── */
+.win{background:var(--silver); border:2px solid; border-color:var(--white) var(--silver-dk) var(--silver-dk) var(--white); box-shadow:inset -1px -1px 0 var(--silver-xdk), inset 1px 1px 0 var(--silver-lt); margin:14px 0;}
+.win-title{background:linear-gradient(to right,var(--navy),var(--navy2)); color:#fff; font-family:var(--font-head); font-size:13px; padding:3px 4px 3px 6px; display:flex; align-items:center; gap:6px; letter-spacing:.3px;}
+.win-title .ico{font-family:var(--font-mono);}
+.win-ctrl{margin-left:auto; display:flex; gap:2px;}
+.win-ctrl b{display:inline-grid; place-items:center; width:18px; height:16px; background:var(--silver); color:#000; border:2px solid; border-color:var(--white) var(--silver-dk) var(--silver-dk) var(--white); font-family:var(--font-mono); font-size:10px; line-height:1; font-weight:bold; box-shadow:inset -1px -1px 0 var(--silver-xdk), inset 1px 1px 0 var(--silver-lt);}
+.win-body{background:#fff; border:2px solid; border-color:var(--silver-dk) var(--white) var(--white) var(--silver-dk); box-shadow:inset 1px 1px 0 var(--silver-xdk), inset -1px -1px 0 var(--silver-lt); margin:6px; padding:14px 16px;}
+.win-body.yellow{background:var(--panel-yellow);}
+.win-body.silver{background:var(--silver);}
+
+/* ── 按鈕 ── */
+.btn{font-family:var(--font-sans); background:var(--silver); color:#000; border:2px solid; border-color:var(--white) var(--silver-dk) var(--silver-dk) var(--white); box-shadow:inset -1px -1px 0 var(--silver-xdk), inset 1px 1px 0 var(--silver-lt); padding:5px 14px; cursor:pointer; font-weight:bold; text-transform:uppercase; letter-spacing:.4px; font-size:12px; text-decoration:none; display:inline-block; line-height:1.4;}
+.btn:hover{background:#d4d4d4; color:#000; text-decoration:none;}
+.btn:active,.btn.is-active{border-color:var(--silver-dk) var(--white) var(--white) var(--silver-dk); box-shadow:inset 1px 1px 0 var(--silver-xdk), inset -1px -1px 0 var(--silver-lt); padding:6px 13px 4px 15px;}
+.btn:focus-visible{outline:2px dotted #000; outline-offset:2px;}
+
+/* ── 水平凹槽分隔線 ── */
+.hr-groove{border:none; height:4px; background:linear-gradient(to bottom,var(--silver-dk) 0 50%,var(--white) 50% 100%); margin:14px 0;}
+
+/* ── 彩虹字 / 閃爍 ── */
+.rainbow{animation:rainbow 4s linear infinite;}
+@keyframes rainbow{0%{color:#ff0000}17%{color:#ff8000}33%{color:#ffff00}50%{color:#00ff00}67%{color:#0080ff}83%{color:#8000ff}100%{color:#ff0000}}
+.blink{animation:blink 1s step-end infinite;}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+
+/* ── 徽章 ── */
+.badge{display:inline-block; font-family:var(--font-head); font-size:11px; color:#fff; padding:1px 6px; border:2px solid; letter-spacing:.5px; vertical-align:middle;}
+.badge-new{background:var(--red); border-color:#ff8080 #800000 #800000 #ff8080; animation:pulse-glow 1.5s ease-in-out infinite;}
+.badge-hot{background:var(--navy); border-color:#5555ff #000080 #000080 #5555ff;}
+@keyframes pulse-glow{0%,100%{transform:scale(1); box-shadow:0 0 0 0 rgba(255,0,0,.7)}50%{transform:scale(1.06); box-shadow:0 0 9px 2px rgba(255,0,0,.55)}}
+
+/* ── HERO ── */
+.hero-grid{display:grid; grid-template-columns:1fr 200px; gap:14px; align-items:start;}
+.hero h1{font-family:var(--font-head); font-size:42px; line-height:1; margin:4px 0 0; letter-spacing:.5px; text-shadow:2px 2px 0 var(--silver-dk);}
+.hero .name-en{font-family:var(--font-mono); font-size:15px; color:#000; margin-top:4px;}
+.hero .eyebrow{font-family:var(--font-mono); font-size:12px; color:#000; background:var(--yellow); display:inline-block; padding:1px 6px; border:1px solid #000;}
+.hero .contact{margin-top:8px; font-size:13px;}
+.hero .contact a{display:block;}
+.portrait-frame{padding:6px; background:var(--silver); border:2px solid; border-color:var(--white) var(--silver-dk) var(--silver-dk) var(--white); box-shadow:inset -1px -1px 0 var(--silver-xdk), inset 1px 1px 0 var(--silver-lt);}
+.portrait-frame img{border:2px solid; border-color:var(--silver-dk) var(--white) var(--white) var(--silver-dk); box-shadow:inset 1px 1px 0 var(--silver-xdk), inset -1px -1px 0 var(--silver-lt);}
+.bio{margin-top:10px; font-size:14px;}
+
+/* ── 技能按鈕 ── */
+.skills{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+
+/* ── 精選作品 ── */
+.feat-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+.feat-card .win-body{padding:0; background:#fff; overflow:hidden;}
+.feat-card .fc-img{aspect-ratio:4/3; overflow:hidden; border-bottom:2px solid var(--silver-dk);}
+.feat-card .fc-img img{width:100%; height:100%; object-fit:cover;}
+.feat-card .fc-ph{aspect-ratio:4/3; display:grid; place-items:center; background:var(--navy); color:var(--lime); font-family:var(--font-mono); font-size:12px; border-bottom:2px solid var(--silver-dk);}
+.feat-card .fc-body{padding:10px 12px;}
+.feat-card .fc-meta{font-family:var(--font-mono); font-size:11px; color:#000; margin-bottom:4px; display:flex; gap:8px; align-items:center;}
+.feat-card .fc-cat{background:var(--navy); color:#fff; padding:1px 5px; font-weight:bold;}
+.feat-card h3{font-family:var(--font-head); font-size:15px; margin:2px 0 4px; line-height:1.25;}
+.feat-card .fc-role{font-family:var(--font-mono); font-size:12px; color:#000; margin-bottom:6px;}
+.feat-card .fc-desc{font-size:13px; line-height:1.5;}
+
+/* ── 學經歷表格 ── */
+.bg-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+.tbl{width:100%; border-collapse:collapse; font-size:13px;}
+.tbl th,.tbl td{border:2px solid var(--silver-dk); padding:5px 7px; text-align:left; vertical-align:top;}
+.tbl thead th{background:var(--navy); color:#fff; font-family:var(--font-head); font-size:12px;}
+.tbl tbody tr:nth-child(even){background:var(--row-alt);}
+.tbl tbody tr:nth-child(odd){background:#fff;}
+.tbl .yr{font-family:var(--font-mono); white-space:nowrap;}
+
+/* ── 專案篩選 + 表格 ── */
+.filters{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0;}
+.proj-scroll{overflow-x:auto;}
+.proj-tbl{min-width:560px;}
+.proj-tbl td.cat a{color:inherit;}
+.cat-pill{display:inline-block; font-family:var(--font-mono); font-size:11px; padding:0 5px; color:#000;}
+.proj-count{font-family:var(--font-mono); font-size:12px; margin:6px 2px;}
+
+/* ── 計數器 ── */
+.hit-counter{display:inline-block; background:#000; color:var(--lime); font-family:var(--font-mono); border:2px solid; border-color:var(--silver-dk) var(--white) var(--white) var(--silver-dk); box-shadow:inset 1px 1px 0 var(--silver-xdk), inset -1px -1px 0 var(--silver-lt); padding:4px 10px; letter-spacing:3px; font-size:14px;}
+
+/* ── 施工條紋 CTA ── */
+.construction{background:repeating-linear-gradient(45deg,var(--yellow) 0 10px,#000 10px 20px); padding:6px; margin:18px 0;}
+.construction .inner{background:var(--silver); border:2px solid; border-color:var(--white) var(--silver-dk) var(--silver-dk) var(--white); box-shadow:inset -1px -1px 0 var(--silver-xdk), inset 1px 1px 0 var(--silver-lt); padding:14px 16px; text-align:center;}
+.construction h2{font-family:var(--font-head); font-size:22px; margin:0 0 6px; letter-spacing:.5px;}
+
+/* ── footer ── */
+.footer{margin-top:18px; text-align:center; font-family:var(--font-mono); font-size:12px; line-height:1.9;}
+.footer .links a{margin:0 6px;}
+.color-row{display:flex; gap:0; margin:10px 0; border:2px solid #000;}
+.color-row span{flex:1; height:22px;}
+
+/* ── 響應式 ── */
+@media (max-width:680px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero .portrait-frame{max-width:220px;}
+  .feat-grid{grid-template-columns:1fr;}
+  .bg-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:34px;}
+}
+
+/* ── 列印 ── */
+@media print{
+  body{background:#fff;}
+  .marquee,.construction,.win-ctrl{display:none;}
+  .win{box-shadow:none;}
+  a{color:#000;}
+}
+
+/* ── 降低動態 ── */
+@media (prefers-reduced-motion:reduce){
+  .rainbow{animation:none; color:var(--red);}
+  .blink{animation:none;}
+  .badge-new{animation:none;}
+  .marquee-track{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- 跑馬燈 -->
+<div class="marquee" aria-label="跑馬燈公告">
+  <div class="marquee-track" aria-hidden="true">
+    <span><b class="c-y">★</b> 歡迎光臨 吳佩珊的個人首頁 <b class="c-y">★</b></span>
+    <span><b class="c-r">»</b> 最佳瀏覽解析度 800×600 / IE 4.0+ <b class="c-r">«</b></span>
+    <span><b class="c-m">✦</b> 現正展出：《青春框景》北海道巡迴中（7/7–7/23）<b class="c-m">✦</b></span>
+    <span><b class="c-c">»</b> 本頁由 記事本 手工編寫 HTML <b class="c-c">«</b></span>
+    <span><b class="c-y">★</b> 歡迎光臨 吳佩珊的個人首頁 <b class="c-y">★</b></span>
+    <span><b class="c-r">»</b> 最佳瀏覽解析度 800×600 / IE 4.0+ <b class="c-r">«</b></span>
+    <span><b class="c-m">✦</b> 現正展出：《青春框景》北海道巡迴中（7/7–7/23）<b class="c-m">✦</b></span>
+    <span><b class="c-c">»</b> 本頁由 記事本 手工編寫 HTML <b class="c-c">«</b></span>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <!-- HERO -->
+  <div class="win hero">
+    <div class="win-title"><span class="ico">📜</span> C:\PEI-SHAN\INDEX.HTML — 記事本
+      <span class="win-ctrl"><b>_</b><b>□</b><b>X</b></span>
+    </div>
+    <div class="win-body yellow">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">CURRICULUM VITAE — 2026</span>
+          <h1 class="rainbow">吳佩珊</h1>
+          <div class="name-en">&gt; Pei-Shan Wu_<span class="blink">█</span></div>
+          <div class="contact">
+            <a href="mailto:polly11603@gmail.com">✉ polly11603@gmail.com</a>
+            <a href="https://www.instagram.com/3_s_photo/" target="_blank" rel="noopener">📷 IG: @3_s_photo</a>
+          </div>
+          <p class="bio"><b>文化工作者</b>，西拉雅族。以專案執行、紀實攝影、採訪書寫與策展為核心，長期以文字與影像記錄南臺灣常民生活與文化現場。2025–2026 年完成跨國紀實攝影計畫<a href="https://shan-photo.github.io/unframed-youth" target="_blank" rel="noopener"><b>《青春框景｜Unframed Youth》</b></a>，赴日本東京、北海道進行田野調查，探討青年身份認同與空間的關係。</p>
+          <div class="skills" id="skills"></div>
+        </div>
+        <div class="portrait-frame">
+          <img src="profile.webp" alt="吳佩珊肖像" width="200" height="250" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 精選作品 -->
+  <div class="win">
+    <div class="win-title"><span class="ico">📁</span> 精選作品 — SELECTED.EXE
+      <span class="win-ctrl"><b>_</b><b>□</b><b>X</b></span>
+    </div>
+    <div class="win-body silver">
+      <div class="feat-grid" id="featuredGrid"></div>
+    </div>
+  </div>
+
+  <!-- 學經歷 -->
+  <div class="win">
+    <div class="win-title"><span class="ico">🗂️</span> 學經歷 — BACKGROUND.SYS
+      <span class="win-ctrl"><b>_</b><b>□</b><b>X</b></span>
+    </div>
+    <div class="win-body silver">
+      <div class="bg-grid">
+        <div>
+          <div class="proj-count">// 學歷 EDUCATION</div>
+          <table class="tbl">
+            <thead><tr><th>學校</th><th>科系</th></tr></thead>
+            <tbody>
+              <tr><td>國立中興大學</td><td>景觀與遊憩學士學位學程　學士</td></tr>
+              <tr><td>國立臺南女子高級中學</td><td>普通科　人文社會科學班</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="proj-count">// 工作經歷 EXPERIENCE</div>
+          <table class="tbl">
+            <thead><tr><th>年份</th><th>單位／職稱</th></tr></thead>
+            <tbody>
+              <tr><td class="yr">2026–</td><td><b>自由工作者</b><br>獨立接案（策展、紀實攝影、採訪編輯、專案執行）</td></tr>
+              <tr><td class="yr">2024–2025</td><td><b>城市浪人育成協會</b><br>品牌行銷公關</td></tr>
+              <tr><td class="yr">2020–2024</td><td><b>透南風文化創意有限公司</b><br>專案執行</td></tr>
+              <tr><td class="yr">2019</td><td><b>大成理想市集</b><br>市集行政（工讀）</td></tr>
+              <tr><td class="yr">2017</td><td><b>行政院農業委員會</b><br>農村再生訪談紀錄（工讀）</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 專案 -->
+  <div class="win">
+    <div class="win-title"><span class="ico">💾</span> 參與專案 — PROJECTS.DAT <span class="badge badge-hot">HOT!</span>
+      <span class="win-ctrl"><b>_</b><b>□</b><b>X</b></span>
+    </div>
+    <div class="win-body silver">
+      <div class="filters" id="filters"></div>
+      <div class="proj-count" id="projCount"></div>
+      <div class="proj-scroll">
+        <table class="tbl proj-tbl">
+          <thead><tr><th>年份</th><th>專案</th><th>角色</th><th>類別</th></tr></thead>
+          <tbody id="projBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 色塊裝飾 -->
+  <div class="color-row" aria-hidden="true">
+    <span style="background:#FF0000"></span><span style="background:#00AA00"></span>
+    <span style="background:#0000FF"></span><span style="background:#FFFF00"></span>
+    <span style="background:#FF00FF"></span><span style="background:#00FFFF"></span>
+  </div>
+
+  <!-- 施工 CTA -->
+  <div class="construction">
+    <div class="inner">
+      <h2>🚧 UNDER CONSTRUCTION 🚧</h2>
+      <p style="margin:4px 0 10px;">本站持續更新中，歡迎來信合作 ✉</p>
+      <a class="btn" href="mailto:polly11603@gmail.com">[ 寄信給我 ]</a>
+      <a class="btn" href="https://www.instagram.com/3_s_photo/" target="_blank" rel="noopener">[ 看 IG ]</a>
+      <a class="btn" href="https://shan-photo.github.io/Resume/" target="_blank" rel="noopener">[ 正式版履歷 ]</a>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div>訪客人數：<span class="hit-counter">0001337</span> ｜ 經營年份：<span class="hit-counter">SINCE1996</span></div>
+    <div style="margin-top:6px;">吳佩珊 Pei-Shan Wu — © 1996–2026 個人首頁</div>
+    <div class="links">
+      <a href="mailto:polly11603@gmail.com">Email</a> |
+      <a href="https://www.instagram.com/3_s_photo/" target="_blank" rel="noopener">Instagram</a> |
+      <a href="https://shan-photo.github.io/Resume/" target="_blank" rel="noopener">正式履歷</a> |
+      <a href="#top">↑ 回頂端</a>
+    </div>
+    <div style="margin-top:6px; color:var(--muted);">本頁以 記事本 手工編寫 ♥ 最佳瀏覽於 800×600</div>
+  </div>
+
+</div>
+
+<script>
+/* ============================================================
+   資料（與正式版履歷同步；在此新增／編輯即可）
+   ============================================================ */
+var CATEGORIES = [
+  { id:'curation', label:'策展' },
+  { id:'events',   label:'活動企劃執行' },
+  { id:'publish',  label:'採訪出版' },
+  { id:'film',     label:'影像紀錄' },
+  { id:'design',   label:'設計編排' },
+  { id:'intl',     label:'國際交流' },
+  { id:'social',   label:'社群經營' }
+];
+
+var PROJECTS = [
+  // 策展
+  { y:'2026', t:'《青春框景｜Unframed Youth》', r:'跨國紀實攝影暨巡迴展覽', c:'curation', href:'https://shan-photo.github.io/unframed-youth' },
+  { y:'2026', t:'《青春框景》北海道展 @ NAKAHARA DENKI Gallery', r:'攝影展出（7/7–7/23）', c:'curation' },
+  { y:'2025', t:'臺師大暖日永續節｜城市浪人展位', r:'展示設計', c:'curation' },
+  { y:'2025', t:'浪人祭6.5、野人祭｜城市浪人展位', r:'展示設計', c:'curation' },
+  { y:'2024', t:'雜學校 國際教育創新博覽會｜城市浪人展位', r:'展示規劃、文字', c:'curation' },
+  { y:'2021', t:'成功大學博物館府城與成大展示更新', r:'行政統籌、平面美編', c:'curation' },
+  // 活動企劃執行
+  { y:'2025', t:'流浪挑戰賽｜城市浪人', r:'宣傳、影像', c:'events' },
+  { y:'2025', t:'人生實驗祭｜城市浪人校友活動', r:'企劃執行、行銷公關', c:'events', href:'https://lihi.cc/zpTEg' },
+  { y:'2024', t:'臺南400流行音樂文化展演規劃執行勞務委託案', r:'專案管理', c:'events' },
+  { y:'2022–24', t:'謝銘祐與麵包車樂團「恁的演唱會」', r:'庶務行政', c:'events' },
+  { y:'2023', t:'臺南市文化局文資處「孔廟文化節」', r:'活動執行', c:'events' },
+  { y:'2023', t:'西拉雅族考古成果及水文化遺產推廣計畫', r:'企劃執行統籌', c:'events' },
+  { y:'2023', t:'透南風咖啡聚場｜7TH BIRTHDAY PARTY', r:'企劃執行統籌', c:'events' },
+  { y:'2023', t:'臺南市文化局｜散步柚樂園✦柚花藝術節', r:'市集、展演企劃', c:'events' },
+  { y:'2022', t:'寫歌冰果室 哼一首___的歌', r:'企劃執行統籌', c:'events' },
+  { y:'2022', t:'臺南新藝獎教育推廣「新藝城市探索秘密」', r:'企劃執行', c:'events' },
+  { y:'2022', t:'嘉義市立博物館與嘉大附小「Muse遊樂園」', r:'企劃執行', c:'events' },
+  { y:'2021', t:'漫遊七股尋寶漁村計畫－龍山社區故事行銷', r:'企劃執行統籌', c:'events' },
+  { y:'2020', t:'今暝來作夢－復興夜間食堂行銷活動', r:'企劃執行統籌', c:'events' },
+  // 採訪出版
+  { y:'2026', t:'《透南風》第八期《離散》— 南風光影〈在傷痕上摺一架新飛機〉', r:'採訪撰稿', c:'publish', href:'https://www.instagram.com/p/DZrr_JMkvTy/' },
+  { y:'2025', t:'城市浪人 2024 年度成果手冊', r:'企劃編輯、撰稿', c:'publish' },
+  { y:'2024', t:'《2023 再。嘉義鄉村藝術行動》專書', r:'執行編輯、採訪撰稿', c:'publish' },
+  { y:'2023', t:'隆田文資教育園區《嘉南大圳工事圖》聯名筆記本', r:'執行編輯', c:'publish' },
+  { y:'2023', t:'《2022 再。嘉義鄉村藝術行動》專書', r:'執行編輯、採訪撰稿', c:'publish' },
+  { y:'2023', t:'孔廟與日本首里城御匾修復交流計畫 中日文御匾摺頁', r:'撰稿', c:'publish' },
+  { y:'2020–23', t:'嘉義市立博物館季刊《桃城晃遊》vol. 9、13、14、15、16', r:'採訪撰稿', c:'publish' },
+  // 影像紀錄
+  { y:'2025', t:'流浪挑戰賽', r:'導演、製片', c:'film' },
+  { y:'2024', t:'謝銘祐〈海岸〉音樂錄影帶', r:'製片', c:'film' },
+  { y:'2022', t:'UNIQLO 臺南區域行銷影片', r:'製片', c:'film' },
+  // 設計編排
+  { y:'2021', t:'【扛茨走溪流】竹籠茨 3D 建模', r:'3D 建模', c:'design' },
+  { y:'2021', t:'【到時間裡走走 Walk in Time】文資推廣活動', r:'視覺設計', c:'design' },
+  { y:'2020', t:'友愛街區的技藝記憶轉運站', r:'視覺、摺頁設計', c:'design' },
+  { y:'2020', t:'溪墘與濱海的時光旅程', r:'社區摺頁規劃', c:'design' },
+  // 國際交流
+  { y:'2025', t:'日本 willdoor × 城市浪人 迷你挑戰賽', r:'庶務行政、隨隊攝影', c:'intl' },
+  { y:'2024', t:'恁的演唱會 海外公演 @ 日本沖繩宜野座', r:'隨隊文字、攝影', c:'intl' },
+  { y:'2024', t:'時苑 攝影 @ 金門', r:'攝影、文字書寫', c:'intl' },
+  { y:'2023', t:'恁的演唱會 海外公演 @ 日本新潟三箇', r:'庶務行政', c:'intl' },
+  // 社群經營
+  { y:'2026', t:'《廟口戲棚跤，大條番薯來破豆》Podcast ／ 真雲林閣掌中劇團', r:'粉專經營、上架、行政', c:'social', href:'https://reurl.cc/K20m6p' },
+  { y:'2025', t:'城市浪人', r:'粉專管理員', c:'social' },
+  { y:'2023–24', t:'復返西拉雅', r:'粉專管理員', c:'social' },
+  { y:'2021–22', t:'台南市七股區龍山社區', r:'粉專管理員', c:'social' },
+  { y:'2021', t:'藝遊臺南「刈香傳藝。陣有藝思」', r:'粉專編輯', c:'social' },
+  { y:'2021', t:'《匯流。敆流》透南風雜誌第七期嘖嘖集資', r:'企劃統籌', c:'social' },
+  { y:'2020–24', t:'透南風工作室、透南風咖啡聚場', r:'粉專管理員', c:'social' },
+  { y:'2020', t:'菁寮義昌碾米廠', r:'粉專管理員', c:'social' },
+  { y:'2019', t:'道禾共好市集', r:'粉專編輯', c:'social' }
+];
+
+var FEATURED = [
+  { y:'2025–26', cat:'策展', t:'《青春框景｜Unframed Youth》', r:'跨國紀實攝影暨巡迴展覽', href:'https://shan-photo.github.io/unframed-youth', img:'work-unframed.webp', badge:'NEW!',
+    d:'赴日本東京、北海道田調，探討青年身份認同與空間的關係；2026 年 7 月現正於北海道 NAKAHARA DENKI Gallery 巡迴展出（7/7–23）。' },
+  { y:'2024', cat:'策展', t:'雜學校 國際教育創新博覽會｜城市浪人展位', r:'展示規劃、文字', img:'work-zaschool.webp',
+    d:'城市浪人於亞洲最大教育創新博覽會的展位，負責展示空間規劃與現場文案。' },
+  { y:'2024', cat:'影像紀錄', t:'謝銘祐〈海岸〉音樂錄影帶', r:'製片', img:'work-coast.webp',
+    d:'擔任金曲歌手謝銘祐單曲 MV 製片，統籌拍攝現場與製片行政。' },
+  { y:'2024', cat:'國際交流', t:'恁的演唱會 海外公演 @ 日本沖繩宜野座', r:'隨隊文字、攝影', img:'work-okinawa.webp',
+    d:'沖繩宜野座海外公演，隨隊以文字及照片紀錄演出現場與巡演旅程。' }
+];
+
+var SKILLS = ['紀實攝影','專案管理','採訪撰稿','執行編輯','活動企劃','社群經營','空間設計'];
+
+/* ── RENDER ── */
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+(function renderSkills(){
+  var box = document.getElementById('skills');
+  box.innerHTML = SKILLS.map(function(s){ return '<span class="btn">'+esc(s)+'</span>'; }).join('');
+})();
+
+(function renderFeatured(){
+  var grid = document.getElementById('featuredGrid');
+  grid.innerHTML = FEATURED.map(function(p){
+    var title = p.href ? '<a href="'+p.href+'" target="_blank" rel="noopener">'+esc(p.t)+'</a>' : esc(p.t);
+    var media = p.img
+      ? '<div class="fc-img"><img src="'+p.img+'" alt="'+esc(p.t)+'" loading="lazy" decoding="async"></div>'
+      : '<div class="fc-ph">&gt; [ NO IMAGE ]_<span class="blink">█</span></div>';
+    var badge = p.badge ? ' <span class="badge badge-new">'+esc(p.badge)+'</span>' : '';
+    return '<div class="win feat-card">'+
+      '<div class="win-title"><span class="ico">🖼️</span> '+esc(p.cat).toUpperCase()+badge+
+        '<span class="win-ctrl"><b>_</b><b>□</b><b>X</b></span></div>'+
+      '<div class="win-body">'+media+
+        '<div class="fc-body">'+
+          '<div class="fc-meta"><span class="yr">['+esc(p.y)+']</span><span class="fc-cat">'+esc(p.cat)+'</span></div>'+
+          '<h3>'+title+'</h3>'+
+          '<div class="fc-role">&gt; '+esc(p.r)+'</div>'+
+          '<div class="fc-desc">'+esc(p.d)+'</div>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+})();
+
+(function renderProjects(){
+  var body = document.getElementById('projBody');
+  var filters = document.getElementById('filters');
+  var countEl = document.getElementById('projCount');
+  var catMap = {}; CATEGORIES.forEach(function(c){ catMap[c.id]=c.label; });
+
+  var active = 'all';
+  function draw(){
+    var list = PROJECTS.filter(function(p){ return active==='all' || p.c===active; })
+      .sort(function(a,b){ function yk(s){ var m=String(s).match(/\d{4}/); return m?+m[0]:0; } return yk(b.y)-yk(a.y); });
+    countEl.textContent = '// 顯示 '+list.length+' / 共 '+PROJECTS.length+' 筆專案';
+    body.innerHTML = list.map(function(p,i){
+      var title = p.href ? '<a href="'+p.href+'" target="_blank" rel="noopener">'+esc(p.t)+'</a>' : esc(p.t);
+      return '<tr>'+
+        '<td class="yr">'+esc(p.y)+'</td>'+
+        '<td>'+title+'</td>'+
+        '<td>'+esc(p.r)+'</td>'+
+        '<td class="cat"><span class="cat-pill">'+esc(catMap[p.c])+'</span></td>'+
+      '</tr>';
+    }).join('');
+  }
+
+  var btns = [{id:'all',label:'全部 ALL'}].concat(CATEGORIES.map(function(c){return {id:c.id,label:c.label};}));
+  filters.innerHTML = btns.map(function(b){
+    return '<button class="btn'+(b.id==='all'?' is-active':'')+'" data-cat="'+b.id+'" type="button">'+esc(b.label)+'</button>';
+  }).join('');
+  filters.querySelectorAll('.btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      active = b.getAttribute('data-cat');
+      filters.querySelectorAll('.btn').forEach(function(x){ x.classList.remove('is-active'); });
+      b.classList.add('is-active');
+      draw();
+    });
+  });
+  draw();
+})();
+</script>
+</body>
+</html>
