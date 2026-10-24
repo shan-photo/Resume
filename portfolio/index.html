@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>吳佩珊 Pei-Shan Wu｜文化工作者・紀實攝影・策展</title>
+<meta name="description" content="吳佩珊（Pei-Shan Wu），文化工作者、紀實攝影、策展。作品集與合作聯絡。">
+<meta property="og:title" content="吳佩珊 Pei-Shan Wu｜作品集">
+<meta property="og:description" content="文化工作者・紀實攝影・策展。代表作品、完整專案列表與聯絡方式。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.jpg">
+<meta name="theme-color" content="#000080">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+<!-- ════════════════════════════════════════════════════════════
+     ✏️ 網站設定（平常不用改）
+     作品資料預設讀取 data/works.csv。
+     若之後改用 Google 試算表，把「發布到網路」的 CSV 網址貼進 sheetCsvUrl；
+     讀不到時會自動退回 data/works.csv。
+     ════════════════════════════════════════════════════════════ -->
+<script>
+window.SITE = {
+  worksCsv: 'data/works.csv',
+  experienceCsv: 'data/experience.csv',
+  sheetCsvUrl: '',
+  // 「現在在做」下方的一句接案狀態，例如：'2026 年 12 月起可接新案'。留空就不顯示。
+  availability: ''
+};
+</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+
+<!-- ── 工作列 ── -->
+<header class="taskbar" id="taskbar">
+  <a class="start" href="#top" aria-label="回到首頁">
+    <span class="start-logo" aria-hidden="true">★</span><span class="start-txt">吳佩珊</span>
+  </a>
+  <nav class="tasknav" id="tasknav" aria-label="主選單">
+    <a class="task" href="#works" data-nav="works"><span aria-hidden="true">📁</span> 作品</a>
+    <a class="task" href="#about" data-nav="about"><span aria-hidden="true">🗂️</span> 關於</a>
+    <a class="task task-cta" href="#contact" data-nav="contact"><span aria-hidden="true">✉</span> 聯絡合作</a>
+  </nav>
+  <div class="tray">
+    <button class="tray-btn" id="gBtn" type="button" hidden aria-pressed="false" aria-label="開啟重力感應"><span class="g-ico" aria-hidden="true">⚛</span><span class="g-txt">重力</span></button>
+    <span id="clock" aria-hidden="true">--:--</span>
+  </div>
+</header>
+<p class="fx-note" id="fxNote" role="status" aria-live="polite" hidden></p>
+
+<!-- ── 跑馬燈（內容來自作品資料，可暫停）── -->
+<div class="marquee" id="marquee" hidden>
+  <button class="marq-toggle" id="marqToggle" type="button" aria-pressed="false" aria-label="暫停跑馬燈">❚❚</button>
+  <div class="marq-viewport"><div class="marq-track" id="marqTrack"></div></div>
+</div>
+
+<main id="main" tabindex="-1">
+
+  <!-- ═════════ 首頁 ═════════ -->
+  <div id="view-home">
+
+    <section class="hero" id="top" aria-labelledby="heroName">
+      <div class="win hero-intro">
+        <div class="win-title"><span aria-hidden="true">📜</span> C:\PEI-SHAN\README.TXT<span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+        <div class="win-body paper">
+          <div class="intro-grid">
+            <div>
+              <p class="eyebrow">PORTFOLIO ／ 2026</p>
+              <h1 id="heroName" class="name">吳佩珊<span class="name-en">Pei-Shan Wu</span></h1>
+              <p class="roles">文化工作者・紀實攝影・策展</p>
+              <p class="bio">西拉雅族。以專案執行、紀實攝影、採訪書寫與策展為核心，長期以文字與影像記錄南臺灣常民生活與文化現場。2025–2026 年完成跨國紀實攝影計畫《青春框景｜Unframed Youth》，赴日本東京、北海道進行田野調查，探討青年身份認同與空間的關係。</p>
+              <div class="cta-row">
+                <a class="btn btn-holo" href="#featured">▶ 看代表作品</a>
+                <a class="btn" href="#contact">✉ 聯絡合作</a>
+                <a class="btn" href="cv/wu-pei-shan-cv.pdf" download="吳佩珊_履歷.pdf">⬇ PDF 履歷</a>
+              </div>
+            </div>
+            <figure class="portrait">
+              <img src="images/profile-portrait.webp" alt="吳佩珊肖像" width="480" height="600" decoding="async" fetchpriority="high">
+            </figure>
+          </div>
+          <dl class="stats" id="stats" aria-label="作品統計"></dl>
+          <div class="now" id="now" hidden>
+            <p class="now-h"><span class="now-dot" aria-hidden="true"></span>現在在做</p>
+            <ul class="now-list" id="nowList"></ul>
+            <p class="now-avail" id="nowAvail" hidden></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 代表作品 -->
+    <section class="win" id="featured" aria-labelledby="featuredTitle">
+      <div class="win-title"><span aria-hidden="true">⭐</span> <h2 id="featuredTitle">代表作品</h2> <span class="en">SELECTED.EXE</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+      <div class="win-body silver">
+        <div class="feat-grid" id="featuredGrid"><p class="loading">讀取中…<span class="blink">█</span></p></div>
+      </div>
+    </section>
+
+    <!-- 全部作品 -->
+    <section class="win" id="works" aria-labelledby="worksTitle">
+      <div class="win-title"><span aria-hidden="true">💾</span> <h2 id="worksTitle">全部作品</h2> <span class="en">PROJECTS.DAT</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+      <div class="win-body silver">
+        <div class="toolbar">
+          <label class="search">
+            <span class="sr">搜尋作品</span>
+            <span aria-hidden="true">🔍</span>
+            <input type="search" id="q" placeholder="搜尋標題、角色、合作單位…" autocomplete="off">
+          </label>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="依類別篩選"></div>
+        <p class="count" id="count" aria-live="polite"></p>
+        <ol class="work-list" id="workList"></ol>
+        <div class="more-wrap" id="moreWrap" hidden><button class="btn" type="button" id="showAll">展開全部作品</button></div>
+      </div>
+    </section>
+
+    <!-- 關於 -->
+    <section class="win" id="about" aria-labelledby="aboutTitle">
+      <div class="win-title"><span aria-hidden="true">🗂️</span> <h2 id="aboutTitle">關於與學經歷</h2> <span class="en">ABOUT.SYS</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+      <div class="win-body silver">
+        <div class="about-grid">
+          <div>
+            <h3 class="sub">專長</h3>
+            <ul class="chips">
+              <li>紀實攝影</li><li>專案管理</li><li>採訪撰稿</li><li>執行編輯</li><li>活動企劃</li><li>社群經營</li><li>空間設計</li>
+            </ul>
+            <h3 class="sub">學歷</h3>
+            <table class="tbl" id="eduTbl"><tbody></tbody></table>
+          </div>
+          <div>
+            <h3 class="sub">工作經歷</h3>
+            <table class="tbl" id="expTbl"><thead><tr><th scope="col">年份</th><th scope="col">單位／職稱</th></tr></thead><tbody></tbody></table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═════════ 作品詳細頁（由 #/work/代號 開啟）═════════ -->
+  <article id="view-detail" hidden></article>
+
+  <!-- 檢查模式（網址加 ?check=1） -->
+  <section class="win" id="checkPanel" hidden></section>
+
+  <!-- ═════════ 聯絡（固定寫在 HTML，資料讀不到也找得到）═════════ -->
+  <section class="win contact" id="contact" aria-labelledby="contactTitle">
+    <div class="win-title"><span aria-hidden="true">✉</span> <h2 id="contactTitle">聯絡合作</h2> <span class="en">CONTACT.EXE</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+    <div class="win-body paper">
+      <p class="contact-lead">策展、紀實攝影、採訪編輯、活動企劃與專案執行的合作邀約，歡迎來信。</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p class="c-label">Email</p>
+          <a class="c-value" id="mailLink" href="mailto:work.aasta@gmail.com">work.aasta@gmail.com</a>
+          <div class="c-actions">
+            <a class="btn" href="mailto:work.aasta@gmail.com?subject=%E5%90%88%E4%BD%9C%E9%82%80%E7%B4%84">✉ 寫信</a>
+            <button class="btn" type="button" id="copyMail" data-copy="work.aasta@gmail.com">⧉ 複製信箱</button>
+          </div>
+        </div>
+        <div class="contact-card">
+          <p class="c-label">Instagram</p>
+          <a class="c-value" href="https://www.instagram.com/3_s_photo/" target="_blank" rel="noopener">@3_s_photo</a>
+          <div class="c-actions">
+            <a class="btn" href="https://www.instagram.com/3_s_photo/" target="_blank" rel="noopener">📷 看 IG（新分頁）</a>
+          </div>
+        </div>
+      </div>
+      <p class="cv-line">申請或投件需要正式履歷？<a class="btn" href="cv/wu-pei-shan-cv.pdf" download="吳佩珊_履歷.pdf">⬇ 下載 PDF 履歷（A4・2 頁）</a></p>
+      <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="color-row" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <p>吳佩珊 Pei-Shan Wu — © 2026</p>
+  <p class="links"><a href="#works">作品</a> ｜ <a href="#about">關於</a> ｜ <a href="#contact">聯絡</a> ｜ <a href="#top">↑ 回頂端</a></p>
+</footer>
+
+<noscript><p class="noscript">此網站需要 JavaScript 顯示作品列表。聯絡方式：work.aasta@gmail.com ／ IG @3_s_photo</p></noscript>
+
+<script src="assets/fx.js" defer></script>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
