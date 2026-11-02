@@ -179,9 +179,9 @@
     var dist = categories().map(function (c) { return { c: c, n: state.works.filter(function (w) { return w.cat === c; }).length }; })
       .sort(function (x, y) { return y.n - x.n; }).slice(0, 3);
     $('#stats').innerHTML =
-      '<div><dt>收錄作品</dt><dd>' + state.works.length + ' 件</dd></div>' +
+      '<div><dt>收錄作品</dt><dd><span class="num" data-to="' + state.works.length + '">' + state.works.length + '</span> 件</dd></div>' +
       '<div><dt>年份</dt><dd>' + (minY ? minY + '–' + String(maxY).slice(2) : '—') + '</dd></div>' +
-      '<div class="dist"><dt>作品最多的領域</dt><dd>' + dist.map(function (d) { return esc(d.c) + ' <b>' + d.n + '</b>'; }).join('<span class="sep">・</span>') + '</dd></div>';
+      '<div class="dist"><dt>作品最多的領域</dt><dd>' + dist.map(function (d) { return esc(d.c) + ' <b class="num" data-to="' + d.n + '">' + d.n + '</b>'; }).join('<span class="sep">・</span>') + '</dd></div>';
   }
 
   /* ── 首頁：代表作品 ── */
@@ -493,11 +493,20 @@
 
     // 複製信箱
     $('#copyMail').addEventListener('click', function () {
-      var text = this.getAttribute('data-copy');
+      var btn = this, text = btn.getAttribute('data-copy');
       var done = function (ok) {
         var t = $('#toast');
-        t.textContent = ok ? '已複製：' + text : '無法自動複製，請手動選取：' + text;
-        clearTimeout(t._t); t._t = setTimeout(function () { t.textContent = ''; }, 4000);
+        clearTimeout(t._t); clearTimeout(btn._t);
+        if (ok) {
+          // 成功：圖示轉成打勾、上方彈出「已複製」；給讀螢幕軟體的訊息放在隱藏文字
+          btn.classList.remove('copied'); void btn.offsetWidth; btn.classList.add('copied');
+          btn.querySelector('.cp-ico').textContent = '✓';
+          t.classList.add('sr'); t.textContent = '已複製信箱：' + text;
+          btn._t = setTimeout(function () { btn.classList.remove('copied'); btn.querySelector('.cp-ico').textContent = '⧉'; }, 1800);
+        } else {
+          t.classList.remove('sr'); t.textContent = '無法自動複製，請手動選取：' + text;
+        }
+        t._t = setTimeout(function () { t.textContent = ''; }, 4000);
       };
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(fallbackCopy(text)); });
@@ -637,6 +646,7 @@
       if (res[1]) renderExperience(parseCSV(res[1]));
       if (checkMode) renderCheck();
       document.documentElement.setAttribute('data-ready', '1');
+      try { document.dispatchEvent(new CustomEvent('portfolio:ready', { detail: state })); } catch (e) {}
       route();
     }).catch(function (e) {
       state.errors.push(e.message);
