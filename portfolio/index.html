@@ -26,6 +26,7 @@
 window.SITE = {
   worksCsv: 'data/works.csv',
   experienceCsv: 'data/experience.csv',
+  servicesCsv: 'data/services.csv',
   sheetCsvUrl: '',
   // 「現在在做」下方的一句接案狀態，例如：'2026 年 12 月起可接新案'。留空就不顯示。
   availability: ''
@@ -87,6 +88,14 @@ window.SITE = {
       <div class="win-title"><span aria-hidden="true">⭐</span> <h2 id="featuredTitle">代表作品</h2> <span class="en">SELECTED.EXE</span></div>
       <div class="win-body silver">
         <div class="feat-grid" id="featuredGrid"><p class="loading">讀取中…</p></div>
+      </div>
+    </section>
+
+    <!-- 可以找我做什麼（內容在 data/services.csv）-->
+    <section class="win" id="services" aria-labelledby="servicesTitle" hidden>
+      <div class="win-title"><span aria-hidden="true">🛠️</span> <h2 id="servicesTitle">可以找我做什麼</h2> <span class="en">SERVICES.TXT</span></div>
+      <div class="win-body silver">
+        <div class="svc-grid" id="svcGrid"></div>
       </div>
     </section>
 

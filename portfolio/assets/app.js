@@ -282,6 +282,29 @@
     }).join('');
   }
 
+  /* ── 可以找我做什麼（data/services.csv）── */
+  function renderServices(rows) {
+    rows = rows.filter(function (r) { return r['服務']; });
+    if (!rows.length) { $('#services').hidden = true; return; }
+    $('#svcGrid').innerHTML = rows.map(function (r) {
+      var ex = splitList(r['作品代號']).map(function (id) { return state.byId[id]; })
+        .filter(function (w) { return w && w.show; });
+      var subject = encodeURIComponent('合作邀約：' + r['服務']);
+      return '<article class="svc">' +
+        '<h3>' + esc(r['服務']) + '</h3>' +
+        (r['說明'] ? '<p class="svc-desc">' + esc(r['說明']) + '</p>' : '') +
+        (ex.length ? '<p class="svc-h">做過的案子</p><ul class="svc-ex">' + ex.map(function (w) {
+          var open = hasDetail(w);
+          var t = '<span class="yr">' + esc(w.year) + '</span><span class="t">' + esc(w.title) + (open ? ' <span aria-hidden="true">▸</span>' : '') + '</span>' +
+            (w.role ? '<span class="role">' + esc(w.role) + '</span>' : '');
+          return '<li>' + (open ? '<a href="' + workHref(w) + '">' + t + '</a>' : '<span class="plain">' + t + '</span>') + '</li>';
+        }).join('') + '</ul>' : '') +
+        '<div class="svc-cta"><a class="btn" href="#contact" data-subject="' + subject + '">✉ 談這類合作</a></div>' +
+      '</article>';
+    }).join('');
+    $('#services').hidden = false;
+  }
+
   /* ── 現在在做：「進行中」填 Y 的作品 ── */
   function renderNow() {
     var live = sorted(state.works.filter(function (w) { return w.live; }), 'new');
@@ -473,6 +496,10 @@
       var c = e.target.closest('a[href="#contact"]');
       if (c) {
         e.preventDefault();
+        // 從「談這類合作」來的：寫信按鈕自動帶上對應的主旨
+        var subj = c.getAttribute('data-subject');
+        var mailBtn = $('#contact .c-actions a[href^="mailto:"]');
+        if (subj && mailBtn) mailBtn.setAttribute('href', 'mailto:work.aasta@gmail.com?subject=' + subj);
         var box = $('#contact');
         box.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         focusSilently($('#contactTitle'));
@@ -618,7 +645,8 @@
     bind();
     Promise.all([
       loadWorks(),
-      fetchText(SITE.experienceCsv || 'data/experience.csv').catch(function () { return ''; })
+      fetchText(SITE.experienceCsv || 'data/experience.csv').catch(function () { return ''; }),
+      fetchText(SITE.servicesCsv || 'data/services.csv').catch(function () { return ''; })
     ]).then(function (res) {
       state.all = parseCSV(res[0]).map(normalize);
       state.works = state.all.filter(function (w) { return w.show && w.id && w.title && w.year && w.cat; });
@@ -626,6 +654,7 @@
       state.all.forEach(function (w) { if (w.id && !state.byId[w.id]) state.byId[w.id] = w; });
       renderStats(); renderFeatured(); renderFilters(); renderList(); renderNow();
       if (res[1]) renderExperience(parseCSV(res[1]));
+      if (res[2]) renderServices(parseCSV(res[2]));
       if (checkMode) renderCheck();
       document.documentElement.setAttribute('data-ready', '1');
       try { document.dispatchEvent(new CustomEvent('portfolio:ready', { detail: state })); } catch (e) {}
