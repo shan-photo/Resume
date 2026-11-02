@@ -52,11 +52,6 @@ window.SITE = {
 </header>
 <p class="fx-note" id="fxNote" role="status" aria-live="polite" hidden></p>
 
-<!-- ── 跑馬燈（內容來自作品資料，可暫停）── -->
-<div class="marquee" id="marquee" hidden>
-  <button class="marq-toggle" id="marqToggle" type="button" aria-pressed="false" aria-label="暫停跑馬燈">❚❚</button>
-  <div class="marq-viewport"><div class="marq-track" id="marqTrack"></div></div>
-</div>
 
 <main id="main" tabindex="-1">
 
@@ -65,14 +60,14 @@ window.SITE = {
 
     <section class="hero" id="top" aria-labelledby="heroName">
       <div class="win hero-intro">
-        <div class="win-title"><span aria-hidden="true">📜</span> C:\PEI-SHAN\README.TXT<span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+        <div class="win-title"><span aria-hidden="true">📜</span> C:\PEI-SHAN\README.TXT</div>
         <div class="win-body paper">
           <div class="intro-grid">
             <div>
               <p class="eyebrow">PORTFOLIO ／ 2026</p>
               <h1 id="heroName" class="name">吳佩珊<span class="name-en">Pei-Shan Wu</span></h1>
               <p class="roles">文化工作者・紀實攝影・策展</p>
-              <p class="bio">西拉雅族。以專案執行、紀實攝影、採訪書寫與策展為核心，長期以文字與影像記錄南臺灣常民生活與文化現場。2025–2026 年完成跨國紀實攝影計畫《青春框景｜Unframed Youth》，赴日本東京、北海道進行田野調查，探討青年身份認同與空間的關係。</p>
+              <p class="bio">西拉雅族。以專案執行、紀實攝影、採訪書寫與策展為核心，長期以文字與影像記錄南臺灣常民生活與文化現場。</p>
               <div class="cta-row">
                 <a class="btn btn-holo" href="#featured">▶ 看代表作品</a>
                 <a class="btn" href="#contact">✉ 聯絡合作</a>
@@ -83,27 +78,21 @@ window.SITE = {
               <img src="images/profile-portrait.webp" alt="吳佩珊肖像" width="480" height="600" decoding="async" fetchpriority="high">
             </figure>
           </div>
-          <dl class="stats" id="stats" aria-label="作品統計"></dl>
-          <div class="now" id="now" hidden>
-            <p class="now-h"><span class="now-dot" aria-hidden="true"></span>現在在做</p>
-            <ul class="now-list" id="nowList"></ul>
-            <p class="now-avail" id="nowAvail" hidden></p>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- 代表作品 -->
     <section class="win" id="featured" aria-labelledby="featuredTitle">
-      <div class="win-title"><span aria-hidden="true">⭐</span> <h2 id="featuredTitle">代表作品</h2> <span class="en">SELECTED.EXE</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+      <div class="win-title"><span aria-hidden="true">⭐</span> <h2 id="featuredTitle">代表作品</h2> <span class="en">SELECTED.EXE</span></div>
       <div class="win-body silver">
-        <div class="feat-grid" id="featuredGrid"><p class="loading">讀取中…<span class="blink">█</span></p></div>
+        <div class="feat-grid" id="featuredGrid"><p class="loading">讀取中…</p></div>
       </div>
     </section>
 
     <!-- 全部作品 -->
     <section class="win" id="works" aria-labelledby="worksTitle">
-      <div class="win-title"><span aria-hidden="true">💾</span> <h2 id="worksTitle">全部作品</h2> <span class="en">PROJECTS.DAT</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+      <div class="win-title"><span aria-hidden="true">💾</span> <h2 id="worksTitle">全部作品</h2> <span class="en">PROJECTS.DAT</span></div>
       <div class="win-body silver">
         <div class="toolbar">
           <label class="search">
@@ -121,8 +110,19 @@ window.SITE = {
 
     <!-- 關於 -->
     <section class="win" id="about" aria-labelledby="aboutTitle">
-      <div class="win-title"><span aria-hidden="true">🗂️</span> <h2 id="aboutTitle">關於與學經歷</h2> <span class="en">ABOUT.SYS</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+      <div class="win-title"><span aria-hidden="true">🗂️</span> <h2 id="aboutTitle">關於與學經歷</h2> <span class="en">ABOUT.SYS</span></div>
       <div class="win-body silver">
+        <div class="about-top">
+          <div>
+            <p class="about-bio">西拉雅族。以專案執行、紀實攝影、採訪書寫與策展為核心，長期以文字與影像記錄南臺灣常民生活與文化現場。2025–2026 年完成跨國紀實攝影計畫《青春框景｜Unframed Youth》，赴日本東京、北海道進行田野調查，探討青年身份認同與空間的關係。</p>
+            <div class="now" id="now" hidden>
+              <p class="now-h"><span class="now-dot" aria-hidden="true"></span>現在在做</p>
+              <ul class="now-list" id="nowList"></ul>
+              <p class="now-avail" id="nowAvail" hidden></p>
+            </div>
+          </div>
+          <dl class="stats" id="stats" aria-label="作品統計"></dl>
+        </div>
         <div class="about-grid">
           <div>
             <h3 class="sub">專長</h3>
@@ -149,7 +149,7 @@ window.SITE = {
 
   <!-- ═════════ 聯絡（固定寫在 HTML，資料讀不到也找得到）═════════ -->
   <section class="win contact" id="contact" aria-labelledby="contactTitle">
-    <div class="win-title"><span aria-hidden="true">✉</span> <h2 id="contactTitle">聯絡合作</h2> <span class="en">CONTACT.EXE</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>
+    <div class="win-title"><span aria-hidden="true">✉</span> <h2 id="contactTitle">聯絡合作</h2> <span class="en">CONTACT.EXE</span></div>
     <div class="win-body paper">
       <p class="contact-lead">策展、紀實攝影、採訪編輯、活動企劃與專案執行的合作邀約，歡迎來信。</p>
       <div class="contact-grid">

@@ -190,7 +190,7 @@
     var grid = $('#featuredGrid');
     if (!list.length) { grid.innerHTML = '<p class="loading">尚未設定代表作品（在 works.csv 的「精選」欄填 Y）。</p>'; return; }
     grid.innerHTML = list.map(function (w, i) {
-      return '<a class="card drop" style="animation-delay:' + (i * 70) + 'ms" id="card-' + esc(w.id) + '" href="' + workHref(w) + '">' +
+      return '<a class="card" id="card-' + esc(w.id) + '" href="' + workHref(w) + '">' +
         '<div class="card-img">' + media(w) + '</div>' +
         '<div class="card-body">' +
           '<div class="meta"><span class="yr">' + (w.year ? esc(w.year) : TODO) + '</span><span class="cat">' + esc(w.cat) + '</span>' + (w.videoUrl ? '<span class="vid">▶ 影片</span>' : '') + '</div>' +
@@ -296,16 +296,6 @@
     $('#now').hidden = false;
   }
 
-  /* ── 跑馬燈：只放資料裡的真實內容 ── */
-  function renderMarquee() {
-    var items = state.works.filter(function (w) { return w.live; }).map(function (w) { return '<b>▶ 進行中</b> ' + esc(w.title); });
-    sorted(state.works, 'new').slice(0, 3).forEach(function (w) { items.push('<b>★ 最新收錄</b> ' + esc(w.title) + '（' + esc(w.year) + '）'); });
-    if (!items.length) return;
-    var html = items.map(function (s) { return '<span>' + s + '</span>'; }).join('');
-    $('#marqTrack').innerHTML = html + '<span aria-hidden="true"></span>' + html;
-    $('#marqTrack').setAttribute('aria-hidden', 'true');
-    $('#marquee').hidden = false;
-  }
 
   /* ── 詳細頁 ── */
   function fact(label, val) {
@@ -345,7 +335,7 @@
     view.innerHTML =
       (hiddenWork ? '<p class="todo" style="display:block;margin-bottom:10px">檢查模式：這件作品目前「顯示＝N」，訪客看不到。</p>' : '') +
       '<div class="win detail drop">' +
-        '<div class="win-title"><span aria-hidden="true">🖼️</span> 作品內容 <span class="en">WORK.VIEW</span><span class="win-ctrl" aria-hidden="true"><b>_</b><b>□</b><b>×</b></span></div>' +
+        '<div class="win-title"><span aria-hidden="true">🖼️</span> 作品內容 <span class="en">WORK.VIEW</span></div>' +
         '<div class="win-body paper">' +
           '<div class="crumbs"><a class="btn" href="#works" id="backBtn">← 回作品列表</a>' +
             '<span class="addr" aria-hidden="true">C:\\作品\\' + esc(w.cat || '未分類') + '\\' + esc(w.title) + '</span></div>' +
@@ -513,14 +503,6 @@
       } else done(fallbackCopy(text));
     });
 
-    // 跑馬燈暫停
-    $('#marqToggle').addEventListener('click', function () {
-      var m = $('#marquee'), on = !m.classList.contains('is-paused');
-      m.classList.toggle('is-paused', on);
-      this.setAttribute('aria-pressed', String(on));
-      this.textContent = on ? '▶' : '❚❚';
-      this.setAttribute('aria-label', on ? '播放跑馬燈' : '暫停跑馬燈');
-    });
 
     // 圖片壞掉時換成佔位
     document.addEventListener('error', function (e) {
@@ -642,7 +624,7 @@
       state.works = state.all.filter(function (w) { return w.show && w.id && w.title && w.year && w.cat; });
       state.byId = {};
       state.all.forEach(function (w) { if (w.id && !state.byId[w.id]) state.byId[w.id] = w; });
-      renderStats(); renderFeatured(); renderFilters(); renderList(); renderMarquee(); renderNow();
+      renderStats(); renderFeatured(); renderFilters(); renderList(); renderNow();
       if (res[1]) renderExperience(parseCSV(res[1]));
       if (checkMode) renderCheck();
       document.documentElement.setAttribute('data-ready', '1');

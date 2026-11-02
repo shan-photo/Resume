@@ -1,6 +1,6 @@
 /* ============================================================
-   動態效果：亂碼解讀、數字捲到才累加、拍立得洗牌
-   系統設定「減少動態」時全部直接顯示最終畫面。
+   拍立得洗牌：點一下才會動（只保留回應操作的動畫）
+   系統設定「減少動態」時直接換張、不播放動畫。
    作品資料由 app.js 讀完後發出 portfolio:ready 事件，這裡才開始。
    ============================================================ */
 (function () {
@@ -8,69 +8,6 @@
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, r) { return (r || document).querySelector(s); };
 
-  function onVisible(el, fn, threshold) {
-    if (!el) return;
-    if (!('IntersectionObserver' in window)) { fn(); return; }
-    var io = new IntersectionObserver(function (ents) {
-      if (ents[0].isIntersecting) { io.disconnect(); fn(); }
-    }, { threshold: threshold || 0.4 });
-    io.observe(el);
-  }
-
-  /* ── 亂碼解讀：像舊電腦開機一樣，從亂碼逐字解出正確文字 ── */
-  var LATIN = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&@*$';
-  var CJK = '▓▒░█▚▞文影像田野紀錄策展攝嘉南風港島街屋';
-  function scramble(node, ms) {
-    var final = node.textContent;
-    if (!final.trim()) return;
-    var start = performance.now();
-    var n = final.length;
-    var at = [];                                      // 每個字在什麼時候定下來
-    for (var i = 0; i < n; i++) at.push((i / n) * ms * 0.75 + Math.random() * ms * 0.25);
-    function tick(now) {
-      var t = now - start, out = '', done = true;
-      for (var i = 0; i < n; i++) {
-        var ch = final[i];
-        if (t >= at[i] || /[\s／・\/\-]/.test(ch)) { out += ch; continue; }
-        done = false;
-        var pool = /[㐀-鿿]/.test(ch) ? CJK : LATIN;
-        out += pool[(Math.random() * pool.length) | 0];
-      }
-      node.textContent = out;
-      if (!done) requestAnimationFrame(tick); else node.textContent = final;
-    }
-    requestAnimationFrame(tick);
-  }
-  function runScramble() {
-    var h1 = $('#heroName');
-    if (!h1 || reduced) return;
-    h1.setAttribute('aria-label', h1.textContent.replace(/\s+/g, ' ').trim());   // 讀螢幕軟體直接念正確姓名
-    var eyebrow = $('.hero .eyebrow');
-    var nameText = h1.firstChild && h1.firstChild.nodeType === 3 ? h1.firstChild : null;
-    var en = $('.name-en', h1);
-    [[eyebrow && eyebrow.firstChild, 900], [nameText, 1100], [en && en.firstChild, 1300]].forEach(function (p) {
-      if (p[0] && p[0].nodeType === 3) scramble(p[0], p[1]);
-    });
-  }
-
-  /* ── 數字捲到才累加 ── */
-  function countUp(el) {
-    var to = +el.getAttribute('data-to');
-    if (!to || reduced) return;
-    var start = performance.now(), dur = 900;
-    el.textContent = '0';
-    (function step(now) {
-      var k = Math.min(1, (now - start) / dur);
-      el.textContent = String(Math.round(to * (1 - Math.pow(1 - k, 3))));
-      if (k < 1) requestAnimationFrame(step); else el.textContent = String(to);
-    })(start);
-  }
-  function runCounts() {
-    var stats = $('#stats');
-    onVisible(stats, function () {
-      Array.prototype.forEach.call(stats.querySelectorAll('.num[data-to]'), countUp);
-    }, 0.6);
-  }
 
   /* ── 拍立得洗牌：肖像＋代表作品照片疊成一疊，點一下抽到最底 ── */
   function shortTitle(t) { return String(t).replace(/[《》〈〉]/g, '').split(/[｜|]/)[0].trim(); }
@@ -148,8 +85,6 @@
 
   document.addEventListener('portfolio:ready', function (e) {
     var state = e.detail;
-    runScramble();
-    runCounts();
     buildPolaroids(state);
   });
 })();
